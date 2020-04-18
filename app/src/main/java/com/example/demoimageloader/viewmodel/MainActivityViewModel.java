@@ -1,17 +1,14 @@
-package com.example.wiprocodebasedemo.viewmodel;
+package com.example.demoimageloader.viewmodel;
 
 import android.app.Application;
 
-import com.example.wiprocodebasedemo.models.MainDataBean;
-import com.example.wiprocodebasedemo.repository.ListDataRepository;
+import com.example.demoimageloader.models.MainDataBean;
+import com.example.demoimageloader.repository.ListDataRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private MutableLiveData<ArrayList<MainDataBean>> mDataModel;

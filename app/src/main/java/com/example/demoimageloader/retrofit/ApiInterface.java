@@ -1,6 +1,6 @@
-package com.example.wiprocodebasedemo.retrofit;
+package com.example.demoimageloader.retrofit;
 
-import com.example.wiprocodebasedemo.models.MainDataBean;
+import com.example.demoimageloader.models.MainDataBean;
 
 
 import java.util.ArrayList;

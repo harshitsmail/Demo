@@ -1,5 +1,5 @@
 
-package com.example.wiprocodebasedemo.models;
+package com.example.demoimageloader.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

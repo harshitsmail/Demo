@@ -1,14 +1,13 @@
-package com.example.wiprocodebasedemo;
+package com.example.demoimageloader;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.imageloader.ImageLoader;
-import com.example.wiprocodebasedemo.models.MainDataBean;
+import com.example.demoimageloader.models.MainDataBean;
 
 import java.util.ArrayList;
 
@@ -33,14 +32,8 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
         MainDataBean rowData = mDataList.get(position);
 
-//        holder.image.set;
         new ImageLoader(mContext).DisplayImage(rowData.getUrls().getRaw(), holder.image);
-//        if (rowData.getTitle() != null) {
-//            holder.title.setText("" + rowData.getTitle());
-//        }
-//        if (rowData.getDescription() != null) {
-//            holder.subText.setText("" + rowData.getDescription());
-//        }
+
     }
 
     @Override
@@ -50,14 +43,12 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, subText;
         public ImageView image;
 
         public MyViewHolder(View view) {
             super(view);
             image = (ImageView) view.findViewById(R.id.img_background);
-//            subText = (TextView) view.findViewById(R.id.tv_subtext);
-//            title = (TextView) view.findViewById(R.id.tv_title);
+
         }
     }
 

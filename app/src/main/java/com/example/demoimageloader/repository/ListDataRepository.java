@@ -1,10 +1,10 @@
-package com.example.wiprocodebasedemo.repository;
+package com.example.demoimageloader.repository;
 
 import android.app.Application;
 
-import com.example.wiprocodebasedemo.models.MainDataBean;
-import com.example.wiprocodebasedemo.retrofit.ApiInterface;
-import com.example.wiprocodebasedemo.retrofit.RetrofitService;
+import com.example.demoimageloader.models.MainDataBean;
+import com.example.demoimageloader.retrofit.ApiInterface;
+import com.example.demoimageloader.retrofit.RetrofitService;
 
 
 import java.util.ArrayList;

@@ -1,18 +1,38 @@
 package com.example.imageloader;
 
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.ImageView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Collections;
+import java.util.Map;
+import java.util.WeakHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class ImageLoader {
 
-    MemoryCache memoryCache=new MemoryCache();
+    Cache memoryCache=new Cache();
     FileCache fileCache;
-    private Map<ImageView, String> imageViews=Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
+    private Map<ImageView, String> imageViews= Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
     ExecutorService executorService;
 
     public ImageLoader(Context context){
         fileCache=new FileCache(context);
-        executorService=Executors.newFixedThreadPool(5);
+        executorService= Executors.newFixedThreadPool(5);
     }
 
-    final int stub_id=R.drawable.ic_launcher;
+    final int stub_id=R.drawable.ic_default;
     public void DisplayImage(String url, ImageView imageView)
     {
         imageViews.put(imageView, url);

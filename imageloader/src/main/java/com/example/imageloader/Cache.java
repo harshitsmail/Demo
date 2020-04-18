@@ -1,6 +1,12 @@
 package com.example.imageloader;
 
+import android.graphics.Bitmap;
+import android.util.Log;
+
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Cache {
 
@@ -10,7 +16,7 @@ public class Cache {
     private long size=0;//current allocated size
     private long limit=1000000;//max memory in bytes
 
-    public MemoryCache(){
+    public Cache(){
         //use 25% of available heap size
         setLimit(Runtime.getRuntime().maxMemory()/4);
     }
@@ -47,9 +53,9 @@ public class Cache {
     private void checkSize() {
         Log.i(TAG, "cache size="+size+" length="+cache.size());
         if(size>limit){
-            Iterator<Entry<String, Bitmap>> iter=cache.entrySet().iterator();//least recently accessed item will be the first one iterated
+            Iterator<Map.Entry<String, Bitmap>> iter=cache.entrySet().iterator();//least recently accessed item will be the first one iterated
             while(iter.hasNext()){
-                Entry<String, Bitmap> entry=iter.next();
+                Map.Entry<String, Bitmap> entry=iter.next();
                 size-=getSizeInBytes(entry.getValue());
                 iter.remove();
                 if(size<=limit)

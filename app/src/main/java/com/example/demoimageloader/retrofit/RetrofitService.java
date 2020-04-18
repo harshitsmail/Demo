@@ -1,4 +1,4 @@
-package com.example.wiprocodebasedemo.retrofit;
+package com.example.demoimageloader.retrofit;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
